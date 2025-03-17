@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Dengue - Dengue Aware PH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-neutral-900 text-gray-300">
+
+    <!-- Navbar -->
+    <nav class="bg-neutral-800 border-b border-neutral-700 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="home.html" class="text-white font-semibold text-lg">Dengue Aware PH</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="home.html" class="text-gray-400 hover:text-gray-300">Home</a>
+                <a href="map.html" class="text-gray-400 hover:text-gray-300">Outbreak Map</a>
+                <a href="symptom-tracker.html" class="text-gray-400 hover:text-gray-300">Symptom Tracker</a>
+                <a href="prevention-tips.html" class="text-gray-400 hover:text-gray-300">Prevention Tips</a>
+                <a href="locator.html" class="text-gray-400 hover:text-gray-300">Healthcare Locator</a>
+                <a href="report-dengue.html" class="text-white font-medium">Report Dengue</a>
+            </div>
+            <a href="profile.html" class="text-gray-400 hover:text-gray-300">Profile</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="container mx-auto py-16 px-6 max-w-2xl">
+        <h1 class="text-3xl font-semibold text-white mb-6 text-center">Report a Dengue Case</h1>
+        <p class="text-gray-400 text-center mb-8">Help update outbreak data by reporting confirmed cases.</p>
+
+        <form class="bg-neutral-800 p-6 rounded-lg shadow-lg">
+            <label class="block text-gray-400 mb-2">Patient Name</label>
+            <input type="text" class="w-full p-3 rounded-md bg-neutral-700 text-gray-300 focus:outline-none mb-4" placeholder="Enter full name" required>
+
+            <label class="block text-gray-400 mb-2">Age</label>
+            <input type="number" class="w-full p-3 rounded-md bg-neutral-700 text-gray-300 focus:outline-none mb-4" placeholder="Enter age" required>
+
+            <label class="block text-gray-400 mb-2">Location</label>
+            <input type="text" class="w-full p-3 rounded-md bg-neutral-700 text-gray-300 focus:outline-none mb-4" placeholder="Enter affected location" required>
+
+            <label class="block text-gray-400 mb-2">Severity Level</label>
+            <select class="w-full p-3 rounded-md bg-neutral-700 text-gray-300 focus:outline-none mb-4" required>
+                <option value="Mild">Mild</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Severe">Severe</option>
+            </select>
+
+            <label class="block text-gray-400 mb-2">Additional Notes</label>
+            <textarea class="w-full p-3 rounded-md bg-neutral-700 text-gray-300 focus:outline-none mb-4" placeholder="Provide any extra details"></textarea>
+
+            <button type="submit" class="w-full bg-red-600 text-white font-medium py-3 rounded-md hover:bg-red-500 transition duration-300">Submit Report</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-800 border-t border-neutral-700 py-5 text-center text-gray-400">
+        <p>&copy; 2025 Dengue Aware PH. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Check if the user is authorized (hospital only)
+        const userRole = localStorage.getItem('userRole');
+        if (userRole !== 'hospital') {
+            alert("Access Denied: Only hospital users can report cases.");
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dengue Aware PH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-neutral-900 flex items-center justify-center h-screen">
+
+    <div class="bg-neutral-800 p-8 rounded-lg shadow-lg w-96">
+        <h2 class="text-2xl font-semibold text-white text-center mb-6">Login</h2>
+
+        <div id="error-message" class="hidden text-red-500 text-center mb-4"></div>
+
+        <form id="login-form" class="space-y-4">
+            <div>
+                <label class="text-gray-400 block mb-1">Username</label>
+                <input type="text" id="username" class="w-full px-4 py-2 rounded bg-neutral-700 text-white focus:outline-none">
+            </div>
+
+            <div>
+                <label class="text-gray-400 block mb-1">Password</label>
+                <input type="password" id="password" class="w-full px-4 py-2 rounded bg-neutral-700 text-white focus:outline-none">
+            </div>
+
+            <button type="submit" class="w-full bg-gray-700 text-white py-2 rounded hover:bg-gray-600 transition">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorMessage = document.getElementById('error-message');
+
+            if (username === 'citizen' && password === '1234') {
+                localStorage.setItem('userRole', 'citizen');
+                window.location.href = 'home.html';
+            } else if (username === 'hospital' && password === '1234') {
+                localStorage.setItem('userRole', 'hospital');
+                window.location.href = 'home.html';
+            } else {
+                errorMessage.textContent = 'Invalid username or password!';
+                errorMessage.classList.remove('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
