@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Tracker - Dengue Aware PH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .result-box {
+            display: none;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .mild { background: #34d399; color: white; }
+        .moderate { background: #fbbf24; color: black; }
+        .severe { background: #f87171; color: white; }
+    </style>
+</head>
+<body class="bg-neutral-900 text-gray-300">
+    
+    <!-- Navbar -->
+    <nav class="bg-neutral-800 border-b border-neutral-700 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="home.html" class="text-white font-semibold text-lg">Dengue Aware PH</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="home.html" class="text-gray-400 hover:text-gray-300">Home</a>
+                <a href="map.html" class="text-gray-400 hover:text-gray-300">Outbreak Map</a>
+                <a href="symptom-tracker.html" class="text-white font-medium">Symptom Tracker</a>
+                <a href="prevention-tips.html" class="text-gray-400 hover:text-gray-300">Prevention Tips</a>
+                <a href="locator.html" class="text-gray-400 hover:text-gray-300">Healthcare Locator</a>
+                <a href="report-dengue.html" id="report-link" class="hidden text-gray-400 hover:text-gray-300">Report Dengue</a>
+            </div>
+            <a href="profile.html" class="text-gray-400 hover:text-gray-300">Profile</a>
+        </div>
+    </nav>
+
+    <!-- Symptom Tracker Form -->
+    <section class="container mx-auto py-16 px-6 text-center">
+        <h1 class="text-3xl font-semibold text-white mb-6">Dengue Symptom Tracker</h1>
+        <p class="text-gray-400 mb-8">Select the symptoms you are experiencing:</p>
+
+        <form id="symptom-form" class="max-w-lg mx-auto bg-neutral-800 p-6 rounded-lg shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" name="symptoms" value="fever" class="form-checkbox text-red-500">
+                    <span>High Fever</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" name="symptoms" value="rash" class="form-checkbox text-red-500">
+                    <span>Skin Rash</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" name="symptoms" value="nausea" class="form-checkbox text-red-500">
+                    <span>Nausea / Vomiting</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" name="symptoms" value="fatigue" class="form-checkbox text-red-500">
+                    <span>Extreme Fatigue</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" name="symptoms" value="headache" class="form-checkbox text-red-500">
+                    <span>Severe Headache</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" name="symptoms" value="jointPain" class="form-checkbox text-red-500">
+                    <span>Joint / Muscle Pain</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" name="symptoms" value="bleeding" class="form-checkbox text-red-500">
+                    <span>Bleeding (nose/gums)</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" name="symptoms" value="eyePain" class="form-checkbox text-red-500">
+                    <span>Pain Behind Eyes</span>
+                </label>
+            </div>
+
+            <button type="submit" class="mt-6 w-full bg-gray-700 text-white py-2 rounded-md hover:bg-gray-600 transition">Check Severity</button>
+        </form>
+
+        <!-- Result Display -->
+        <div id="result-box" class="result-box mt-6"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-800 border-t border-neutral-700 py-5 text-center text-gray-400">
+        <p>&copy; 2025 Dengue Aware PH. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('symptom-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const selectedSymptoms = Array.from(document.querySelectorAll('input[name="symptoms"]:checked')).map(el => el.value);
+            const resultBox = document.getElementById('result-box');
+
+            let severity;
+            if (selectedSymptoms.length >= 6) {
+                severity = "Severe";
+                resultBox.className = "result-box mt-6 severe";
+                resultBox.innerText = "⚠ High risk of Dengue. Seek medical attention immediately!";
+            } else if (selectedSymptoms.length >= 3) {
+                severity = "Moderate";
+                resultBox.className = "result-box mt-6 moderate";
+                resultBox.innerText = "⚠ Possible Dengue symptoms detected. Monitor closely and stay hydrated.";
+            } else if (selectedSymptoms.length > 0) {
+                severity = "Mild";
+                resultBox.className = "result-box mt-6 mild";
+                resultBox.innerText = "✔ Symptoms are mild. Stay alert and consult a doctor if they worsen.";
+            } else {
+                severity = null;
+                resultBox.className = "result-box";
+                resultBox.innerText = "";
+                resultBox.style.display = "none";
+                return;
+            }
+
+            resultBox.style.display = "block";
+        });
+
+        // Show "Report Dengue" only for hospital users
+        const userRole = localStorage.getItem('userRole');
+        if (userRole === 'hospital') {
+            document.getElementById('report-link').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>

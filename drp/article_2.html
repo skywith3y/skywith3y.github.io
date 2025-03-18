@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article 2 - Lopez | Digital Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        function showSection(sectionId) {
+            const sections = ['rpw', 'annotations', 'graphic', 'response'];
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (id === sectionId) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <div class="max-w-screen-xl mx-auto p-8">
+        <nav class="mb-24">
+            <ul class="flex space-x-6">
+                <li><a href="./index.html" class="text-gray-700 hover:text-black">HOME</a></li>
+                <li><a href="./article_1.html" class="text-gray-700 hover:text-black">ARTICLE 1</a></li>
+                <li><a href="./article_2.html" class="text-gray-700 hover:text-black font-bold">ARTICLE 2</a></li>
+                <li><a href="./haiku.html" class="text-gray-700 hover:text-black">HAIKU</a></li>
+            </ul>
+        </nav>
+
+        <section class="mb-8">
+            <h1 class="text-4xl font-semibold mb-1">Face-to-face or face-to-screen?</h1>
+            <p class="text-lg text-gray-700">This contains all my work on this article.</p>
+        </section>
+
+        <div class="mb-8 flex flex-wrap justify-center">
+            <button onclick="showSection('rpw')" class="text-gray-700 hover:text-black py-2 px-4 rounded border border-gray-300 mr-2 mb-2 w-full sm:w-auto">RPW</button>
+            <button onclick="showSection('annotations')" class="text-gray-700 hover:text-black py-2 px-4 rounded border border-gray-300 mr-2 mb-2 w-full sm:w-auto">Annotations</button>
+            <button onclick="showSection('graphic')" class="text-gray-700 hover:text-black py-2 px-4 rounded border border-gray-300 mr-2 mb-2 w-full sm:w-auto">Graphic Organizer</button>
+            <button onclick="showSection('response')" class="text-gray-700 hover:text-black py-2 px-4 rounded border border-gray-300 mb-2 w-full sm:w-auto">Reader's Response</button>
+        </div>
+
+        <section id="rpw" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">RPW (Reading Process Worksheet)</h2>
+            <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+                <embed src="./files/rpw_2.pdf" type="application/pdf" class="absolute top-0 left-0 w-full h-full">
+            </div>
+        </section>
+
+        <section id="annotations" class="mb-8" style="display: none;">
+            <h2 class="text-2xl font-semibold mb-4">Annotations</h2>
+            <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+                <embed src="./files/rpw_2_annotations.pdf" type="application/pdf" class="absolute top-0 left-0 w-full h-full">
+            </div>
+        </section>
+
+        <section id="graphic" class="mb-8" style="display: none;">
+            <h2 class="text-2xl font-semibold mb-4">Graphic Organizer</h2>
+            <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+                <embed src="./files/rpw_2_graphic_organizer.pdf" type="application/pdf" class="absolute top-0 left-0 w-full h-full">
+            </div>
+        </section>
+
+        <section id="response" class="mb-8" style="display: none;">
+            <h2 class="text-2xl font-semibold mb-4">Reader's Response</h2>
+            <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+                <embed src="./files/rpw_2_readers_response.pdf" type="application/pdf" class="absolute top-0 left-0 w-full h-full">
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="text-center p-4 text-gray-500 text-sm">
+        <p>&copy; 2025 Josef Lopez. BSITWMA AW11.</p>
+    </footer>
+</body>
+</html>
