@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article 1 - Are We Too Dependent on Technology?</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .pdf-embed {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-900 text-white dark:bg-gray-800 dark:text-gray-100">
+
+    <header class="container mx-auto py-4 px-4 flex justify-end items-center">
+        <nav class="space-x-4">
+            <a href="./index.html" class="text-gray-300 hover:text-gray-100 dark:text-gray-400 dark:hover:text-gray-200">HOME</a>
+            <a href="./article_1.html" class="text-gray-300 hover:text-gray-100 dark:text-gray-400 dark:hover:text-gray-200">ARTICLE 1</a>
+            <a href="./article_2.html" class="text-gray-300 hover:text-gray-100 dark:text-gray-400 dark:hover:text-gray-200">ARTICLE 2</a>
+            <a href="./haiku.html" class="text-gray-300 hover:text-gray-100 dark:text-gray-400 dark:hover:text-gray-200">HAIKU</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 mt-5">
+        <div class="bg-gray-800 dark:bg-gray-900 mb-20 rounded-lg shadow-md p-6">
+            <h1 class="text-3xl font-bold mb-4 dark:text-white">Are We Too Dependent on Technology?</h1>
+            <p class="text-gray-400 mb-4 dark:text-gray-300">
+                This article explores the growing reliance on technology in our daily lives, examining both the benefits and potential drawbacks of this dependence.
+            </p>
+            <p class="dark:text-gray-300">
+                We delve into how technology has transformed communication, work, and leisure, while also considering the impact on social interactions and mental well-being.
+            </p>
+            <div class="mt-4 space-x-2">
+                <button onclick="togglePdf('rpw')" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded text-sm font-medium text-white">RPW</button>
+                <button onclick="togglePdf('annotations')" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded text-sm font-medium text-white">Annotations</button>
+                <button onclick="togglePdf('graphic')" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded text-sm font-medium text-white">Graphic Organizer</button>
+                <button onclick="togglePdf('response')" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded text-sm font-medium text-white">Reader's Response</button>
+            </div>
+
+            <div id="rpw" class="pdf-embed mt-4">
+                <embed src="./files/rpw_1.pdf" type="application/pdf" width="100%" height="600px" />
+            </div>
+            <div id="annotations" class="pdf-embed mt-4">
+                <embed src="./files/rpw_1_annotations.pdf" type="application/pdf" width="100%" height="600px" />
+            </div>
+            <div id="graphic" class="pdf-embed mt-4">
+                <embed src="./files/rpw_1_graphic_organizer.pdf" type="application/pdf" width="100%" height="600px" />
+            </div>
+            <div id="response" class="pdf-embed mt-4">
+                <embed src="./files/rpw_1_readers_response.pdf" type="application/pdf" width="100%" height="600px" />
+            </div>
+        </div>
+    </main>
+
+    <footer class="fixed bottom-0 left-0 w-full bg-gray-800 dark:bg-gray-900 py-4 text-center text-gray-400 dark:text-gray-500">
+        <div class="container mx-auto">
+            <p>&copy; 2025 Bryxx Nacario. BSITWMA. AW11.</p>
+        </div>
+    </footer>
+
+    <script>
+        function togglePdf(id) {
+            const pdfDivs = document.querySelectorAll('.pdf-embed');
+            pdfDivs.forEach(div => {
+                div.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
