@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haiku - Lopez | Digital Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        function showHaiku(haikuId) {
+            const haikus = ['haiku1', 'haiku2', 'haiku3', 'haiku4', 'haiku5'];
+            haikus.forEach(id => {
+                const haiku = document.getElementById(id);
+                if (id === haikuId) {
+                    haiku.style.display = 'block';
+                } else {
+                    haiku.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <div class="max-w-screen-xl mx-auto p-8">
+        <nav class="mb-24">
+            <ul class="flex space-x-6">
+                <li><a href="./index.html" class="text-gray-700 hover:text-black">HOME</a></li>
+                <li><a href="./article_1.html" class="text-gray-700 hover:text-black">ARTICLE 1</a></li>
+                <li><a href="./article_2.html" class="text-gray-700 hover:text-black">ARTICLE 2</a></li>
+                <li><a href="./haiku.html" class="text-gray-700 hover:text-black font-bold">HAIKU</a></li>
+            </ul>
+        </nav>
+
+        <section class="mb-8">
+            <h1 class="text-4xl font-semibold mb-1">Haiku Collection</h1>
+            <p class="text-lg text-gray-700">A collection of my responses to Alvin B. Cruz's haiku.</p>
+        </section>
+
+        <div class="mb-8 flex flex-wrap justify-center">
+            <button onclick="showHaiku('haiku1')" class="text-gray-700 hover:text-black py-2 px-4 rounded border border-gray-300 mr-2 mb-2 w-full sm:w-auto">Haiku 1</button>
+            <button onclick="showHaiku('haiku2')" class="text-gray-700 hover:text-black py-2 px-4 rounded border border-gray-300 mr-2 mb-2 w-full sm:w-auto">Haiku 2</button>
+            <button onclick="showHaiku('haiku3')" class="text-gray-700 hover:text-black py-2 px-4 rounded border border-gray-300 mr-2 mb-2 w-full sm:w-auto">Haiku 3</button>
+            <button onclick="showHaiku('haiku4')" class="text-gray-700 hover:text-black py-2 px-4 rounded border border-gray-300 mr-2 mb-2 w-full sm:w-auto">Haiku 4</button>
+            <button onclick="showHaiku('haiku5')" class="text-gray-700 hover:text-black py-2 px-4 rounded border border-gray-300 mb-2 w-full sm:w-auto">Haiku 5</button>
+        </div>
+
+        <section id="haiku1" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Haiku 1</h2>
+            <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+                <embed src="./files/haiku_1.pdf" type="application/pdf" class="absolute top-0 left-0 w-full h-full">
+            </div>
+        </section>
+
+        <section id="haiku2" class="mb-8" style="display: none;">
+            <h2 class="text-2xl font-semibold mb-4">Haiku 2</h2>
+            <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+                <embed src="./files/haiku_2.pdf" type="application/pdf" class="absolute top-0 left-0 w-full h-full">
+            </div>
+        </section>
+
+        <section id="haiku3" class="mb-8" style="display: none;">
+            <h2 class="text-2xl font-semibold mb-4">Haiku 3</h2>
+            <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+                <embed src="./files/haiku_3.pdf" type="application/pdf" class="absolute top-0 left-0 w-full h-full">
+            </div>
+        </section>
+
+        <section id="haiku4" class="mb-8" style="display: none;">
+            <h2 class="text-2xl font-semibold mb-4">Haiku 4</h2>
+            <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+                <embed src="./files/haiku_4.pdf" type="application/pdf" class="absolute top-0 left-0 w-full h-full">
+            </div>
+        </section>
+
+        <section id="haiku5" class="mb-8" style="display: none;">
+            <h2 class="text-2xl font-semibold mb-4">Haiku 5</h2>
+            <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+                <embed src="./files/haiku_5.pdf" type="application/pdf" class="absolute top-0 left-0 w-full h-full">
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="text-center p-4 text-gray-500 text-sm">
+        <p>&copy; 2025 Josef Lopez. BSITWMA AW11.</p>
+    </footer>
+</body>
+</html>
