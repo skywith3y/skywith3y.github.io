@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About the Bank | BSP</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+  <style>
+    :root {
+      --bsp-blue: #003366;
+      --bsp-yellow: #fdb913;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    .header {
+      background-color: var(--bsp-blue);
+      color: white;
+      padding: 20px 0;
+    }
+
+    .header h5 {
+      margin-left: 10px;
+    }
+
+    .navbar {
+      background-color: #f8f9fa;
+    }
+
+    .section-title {
+      color: var(--bsp-blue);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      color: #444;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    .section-text {
+      color: #666;
+      font-size: 15px;
+    }
+
+    .btn-custom {
+      border: 1px solid var(--bsp-blue);
+      color: var(--bsp-blue);
+    }
+
+    .btn-custom:hover {
+      background-color: var(--bsp-blue);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .header .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header form {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="container-fluid header">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+      <img src="./img/bsp_logo.png" alt="BSP Logo" style="height: 50px;">
+      <h5 class="mb-0 ms-3">BANGKO SENTRAL NG PILIPINAS</h5>
+    </div>
+    <form class="d-flex" role="search">
+      <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
+    </form>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg border-bottom">
+  <div class="container">
+    <ul class="navbar-nav d-flex flex-row flex-wrap justify-content-center w-100">
+      <li class="nav-item px-2"><a class="nav-link" href="#">About the Bank</a></li>
+      <li class="nav-item px-2"><a class="nav-link" href="#">Price Stability</a></li>
+      <li class="nav-item px-2"><a class="nav-link" href="#">Financial Stability</a></li>
+      <li class="nav-item px-2"><a class="nav-link" href="#">Payments and Settlements</a></li>
+      <li class="nav-item px-2"><a class="nav-link" href="#">Monetary Policy</a></li>
+      <li class="nav-item px-2"><a class="nav-link" href="#">News</a></li>
+      <li class="nav-item px-2"><a class="nav-link" href="#">Consumer Corner</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container my-5">
+  <div class="row">
+    <!-- Text content -->
+    <div class="col-md-6">
+      <h3 class="section-title">ABOUT THE BANK</h3>
+
+      <div>
+        <h6 class="section-subtitle">Mission</h6>
+        <p class="section-text">To promote and maintain price stability, a strong financial system, and a safe and efficient payments and settlements system conducive to a sustainable and inclusive growth of the economy.</p>
+      </div>
+
+      <div>
+        <h6 class="section-subtitle">Vision</h6>
+        <p class="section-text">The BSP aims to be recognized globally as the monetary authority and primary financial system supervisor that supports a strong economy and promotes a high quality of life for all Filipinos.</p>
+      </div>
+
+      <div>
+        <h6 class="section-subtitle">Core Values</h6>
+        <p class="section-text">Excellence, Patriotism, Integrity, Solidarity, Accountability.</p>
+      </div>
+
+      <div>
+        <h6 class="section-subtitle">Historical Background</h6>
+        <p class="section-text">
+          A group of Filipinos had conceptualized a central bank for the Philippines as early as 1933. It came up with the rudiments of a bill for the establishment of a central bank for the country after a careful study of the economic provisions of the Hare-Hawes Cutting bill, the Philippine independence bill approved by the US Congress.
+        </p>
+        <!-- Read More Button -->
+        <a class="text-primary" data-bs-toggle="collapse" href="#readMoreHistory" role="button" aria-expanded="false" aria-controls="readMoreHistory">
+          Read More
+        </a>
+      
+        <!-- Collapsible Content -->
+        <div class="collapse section-text mt-2" id="readMoreHistory">
+          During the Commonwealth period (1935-1941), the discussion about a Philippine central bank that would promote price stability and economic growth continued. The country’s monetary system then was administered by the Department of Finance and the National Treasury. The Philippines was on the exchange standard using the US dollar—which was backed by 100 percent gold reserve—as the standard currency.
+      
+          <br><br>In 1939, as required by the Tydings-McDuffie Act, the Philippine legislature passed a law establishing a central bank. As it was a monetary law, it required the approval of the United States president. However, President Franklin D. Roosevelt disapproved it due to strong opposition from vested interests. A second law was passed in 1944 during the Japanese occupation, but the arrival of the American liberalization forces aborted its implementation.
+      
+          <br><br>Shortly after President Manuel Roxas assumed office in 1946, he instructed then Finance Secretary Miguel Cuaderno, Sr. to draw up a charter for a central bank. The establishment of a monetary authority became imperative a year later as a result of the findings of the Joint Philippine-American Finance Commission chaired by Mr. Cuaderno. The Commission, which studied Philippine financial, monetary and fiscal problems in 1947, recommended a shift from the dollar exchange standard to a managed currency system. A central bank was necessary to implement the proposed shift to the new system.
+      
+          <br><br>Immediately, the Central Bank Council, which was created by President Manuel Roxas to prepare the charter of a proposed monetary authority, produced a draft. It was submitted to Congress in February 1948. By June of the same year, the newly-proclaimed President Elpidio Quirino, who succeeded President Roxas, affixed his signature on Republic Act No. 265, the Central Bank Act of 1948. The establishment of the Central Bank of the Philippines was a definite step toward national sovereignty...
+      
+          <br><br>...On 3 July 1993, the New Central Bank Act took effect.
+        </div>
+      </div>
+    </div>
+
+    <!-- Image -->
+    <div class="col-md-6 text-center">
+      <img src="./img/philippine_map.png" alt="Map of the Philippines" class="img-fluid" style="max-height: 400px;">
+    </div>
+  </div>
+
+  <!-- Button group -->
+  <div class="text-center mt-5">
+    <button class="btn btn-custom mx-1">Contact Us</button>
+    <button class="btn btn-custom mx-1">Learn More</button>
+    <button class="btn btn-custom mx-1">Careers</button>
+    <button class="btn btn-custom mx-1">FAQs</button>
+  </div>
+</div>
+<script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
