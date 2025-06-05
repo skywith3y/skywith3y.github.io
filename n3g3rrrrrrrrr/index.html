@@ -11,82 +11,201 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      padding: 0;
+      margin: 0;
     }
+  
     .bsp-blue {
       background-color: #003366;
       color: white;
     }
+  
     .bsp-yellow {
       color: #FFD700;
     }
-
+  
     h1, h4, .section-title {
-        font-family: 'Merriweather', serif;
+      font-family: 'Merriweather', serif;
     }
-
+  
     input.form-control {
-        max-width: 250px;
-        border-radius: 20px;
-        border: none;
-        padding: 8px 15px;
+      max-width: 250px;
+      border-radius: 20px;
+      border: none;
+      padding: 8px 15px;
     }
-
+  
     .section-title {
       font-weight: bold;
       font-size: 1.5rem;
     }
-
+  
     .circle-nav {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
       text-decoration: none;
     }
-
+  
     .circle-nav:hover .bg-primary {
       background-color: #002b55 !important;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
       transform: scale(1.1);
     }
-
+  
     .circle-nav p {
       color: #003366;
       transition: color 0.3s ease;
     }
-
+  
     .circle-nav:hover p {
       color: #00509e;
       font-weight: bold;
     }
-
+  
     .circle-nav .bg-primary {
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     }
-
-    .circle-nav:hover .bg-primary {
-        background-color: #002b55 !important;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        transform: scale(1.1);
-    }
-
-    .card {
-      border: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
+  
     .navbar {
       backdrop-filter: blur(8px);
       border-bottom: 2px solid #FFD700;
     }
 
-    .nav-item:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 5px;
+    .nav-item {
+      border-bottom: 3px solid transparent; /* Yellow */
     }
+  
+    .nav-item:hover {
+      border-bottom: 3px solid #FFD700; /* Yellow */
+      transition: border 0.2s ease;
+    }
+  
+    /* RESPONSIVE FIXES */
+    @media (max-width: 767.98px) {
+      header .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+      }
+  
+      header img {
+        width: 70px;
+        height: 70px;
+      }
+  
+      header h5 {
+        font-size: 1rem;
+      }
+  
+      header input.form-control {
+        width: 100% !important;
+        max-width: none;
+      }
+  
+      .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+  
+      .navbar-nav {
+        width: 100%;
+      }
+  
+      .circle-nav .bg-primary {
+        width: 80px !important;
+        height: 80px !important;
+      }
+  
+      .circle-nav i {
+        font-size: 1.5rem !important;
+      }
+  
+      .circle-nav p {
+        font-size: 0.8rem;
+      }
+  
+      .section-title {
+        font-size: 1.2rem;
+      }
+  
+      .card {
+        font-size: 0.9rem;
+      }
+  
+      .about-bsp-text {
+        text-align: center;
+      }
+  
+      .about-bsp-text .row {
+        flex-direction: column;
+      }
+  
+      .about-bsp-text .col-md-3 {
+        margin-bottom: 1rem;
+      }
+  
+      .about-bsp-text .col-md-9 {
+        text-align: center;
+      }
+    }
+  
+    /* Footer responsiveness */
+    @media (max-width: 767.98px) {
+      footer .row {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .hero-section {
+  background: linear-gradient(180deg, #003366 0%, #004080 100%);
+}
+
+.hero-section h1 {
+  line-height: 1.3;
+}
+
+.hero-section .btn-warning {
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-section .btn-warning:hover {
+  background-color: #e0b200;
+  transform: translateY(-2px);
+}
+
+.section-title {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card h2 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.circle-nav .rounded-circle {
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+.circle-nav:hover .rounded-circle {
+  transform: scale(1.05);
+}
+
   </style>
 </head>
 <body>
@@ -124,19 +243,83 @@
   
 
 <!-- Hero Section -->
-<section class="py-5 text-white" style="background: linear-gradient(to right, #003366, #00509e);">
+<section class="hero-section text-white py-5" style="background-color: #003366;">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-md-6 mb-4 mb-md-0">
-        <h1 class="fw-bold display-4 mb-3">
-          COUNTRY’S CENTRAL <br><span class="text-warning">MONETARY AUTHORITY</span>
+      <!-- Text Content -->
+      <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+        <h1 class="fw-bold display-5">
+          COUNTRY’S <span class="text-warning">CENTRAL</span><br>
+          <span class="text-warning">MONETARY AUTHORITY</span>
         </h1>
-        <p class="lead mb-4">The central bank of the Republic of the Philippines.</p>
-        <a href="#" class="btn btn-warning btn-lg px-4 py-2 fw-semibold shadow">Learn More</a>
+        <p class="lead mt-3">The central bank of the Republic of the Philippines.</p>
+        <a href="#" class="btn btn-warning px-4 py-2 mt-3 fw-bold shadow-sm">Learn More</a>
       </div>
+      
+      <!-- Image -->
       <div class="col-md-6 text-center">
-        <img src="./img/ph_map.png" alt="Philippine Map" class="img-fluid" style="height: 615px;">
+        <img src="./img/ph_map.png" alt="Philippines Map" class="img-fluid" style="max-height: 350px;">
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BSP at a Glance -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <div class="text-center mb-4">
+      <h4 class="fw-semibold fs-4 text-dark d-flex align-items-center justify-content-center">
+        BSP at a Glance
+      </h4>
+      <p class="text-muted small mb-0">Key economic indicators as of the latest data</p>
+    </div>
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <i class="bi bi-graph-down-arrow fs-3 text-primary mb-2"></i>
+            <h2 class="text-primary mb-2">1.3%</h2>
+            <p class="text-muted mb-0">Inflation Rate<br><small>(May 2025)</small></p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <i class="bi bi-graph-down-arrow fs-3 text-primary mb-2"></i>
+            <h2 class="text-primary mb-2">₱55.79</h2>
+            <p class="text-muted mb-0">USD to PHP Exchange<br><small>(June 5, 2025)</small></p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <i class="bi bi-graph-up fs-3 text-primary mb-2"></i>
+            <h2 class="text-primary mb-2">5.00%</h2>
+            <p class="text-muted mb-0">ON Deposit Rate<br><small>(June 5, 2025)</small></p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <i class="bi bi-graph-up fs-3 text-primary mb-2"></i>
+            <h2 class="text-primary mb-2">6.00%</h2>
+            <p class="text-muted mb-0">ON Lending Rate<br><small>(June 5, 2025)</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4 text-center">
+      <a href="/statistics" class="btn btn-outline-primary rounded-pill px-4">
+        View More
+      </a>
     </div>
   </div>
 </section>
@@ -144,63 +327,44 @@
 <!-- Icon Quick Links -->
 <section class="py-4 bg-white">
   <div class="container">
+    <div class="text-center mb-4">
+      <h4 class="fw-semibold fs-4 text-dark d-flex align-items-center justify-content-center">
+        Quick Access
+      </h4>
+      <p class="text-muted small mb-0">Navigate key areas of monetary policy and financial data</p>
+    </div>
     <div class="row text-center">
       <div class="col-6 col-md-3 mb-4">
-        <a href="#" class="circle-nav d-block">
-          <div class="bg-primary rounded-circle d-inline-flex justify-content-center align-items-center" style="width: 120px; height: 120px;">
-            <i class="bi bi-arrow-left-right text-white fs-1"></i>
+        <div class="card h-100 shadow-sm border-0 text-center p-4">
+          <div class="card-body">
+            <i class="bi bi-arrow-left-right fs-2 text-primary mb-3"></i>
+            <p class="fw-semibold mb-0">Exchange Rates</p>
           </div>
-          <p class="mt-2 fw-semibold">Exchange Rates</p>
-        </a>
+        </div>
       </div>
       <div class="col-6 col-md-3 mb-4">
-        <a href="#" class="circle-nav d-block">
-          <div class="bg-primary rounded-circle d-inline-flex justify-content-center align-items-center" style="width: 120px; height: 120px;">
-            <i class="bi bi-bar-chart-line text-white fs-1"></i>
+        <div class="card h-100 shadow-sm border-0 text-center p-4">
+          <div class="card-body">
+            <i class="bi bi-bar-chart-line fs-2 text-primary mb-3"></i>
+            <p class="fw-semibold mb-0">Key Rates</p>
           </div>
-          <p class="mt-2 fw-semibold">Key Rates</p>
-        </a>
+        </div>
       </div>
       <div class="col-6 col-md-3 mb-4">
-        <a href="#" class="circle-nav d-block">
-          <div class="bg-primary rounded-circle d-inline-flex justify-content-center align-items-center" style="width: 120px; height: 120px;">
-            <i class="bi bi-file-earmark-text text-white fs-1"></i>
+        <div class="card h-100 shadow-sm border-0 text-center p-4">
+          <div class="card-body">
+            <i class="bi bi-file-earmark-text fs-2 text-primary mb-3"></i>
+            <p class="fw-semibold mb-0">Regulations</p>
           </div>
-          <p class="mt-2 fw-semibold">Regulations</p>
-        </a>
+        </div>
       </div>
       <div class="col-6 col-md-3 mb-4">
-        <a href="#" class="circle-nav d-block">
-          <div class="bg-primary rounded-circle d-inline-flex justify-content-center align-items-center" style="width: 120px; height: 120px;">
-            <i class="bi bi-pie-chart text-white fs-1"></i>
+        <div class="card h-100 shadow-sm border-0 text-center p-4">
+          <div class="card-body">
+            <i class="bi bi-journal-text fs-2 text-primary mb-3"></i>
+            <p class="fw-semibold mb-0">Publications</p>
           </div>
-          <p class="mt-2 fw-semibold">Publications</p>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BSP at a Glance -->
-<section class="py-5 bg-light">
-  <div class="container text-center">
-    <h4 class="section-title mb-4">BSP At A Glance</h4>
-    <div class="row">
-      <div class="col-md-3">
-        <h2 class="text-primary">3.5%</h2>
-        <p>Inflation Rate (May 2025)</p>
-      </div>
-      <div class="col-md-3">
-        <h2 class="text-primary">6.25%</h2>
-        <p>Policy Interest Rate</p>
-      </div>
-      <div class="col-md-3">
-        <h2 class="text-primary">₱56.23</h2>
-        <p>USD to PHP Exchange</p>
-      </div>
-      <div class="col-md-3">
-        <h2 class="text-primary">#1</h2>
-        <p>Financial Inclusion Ranking (ASEAN)</p>
+        </div>
       </div>
     </div>
   </div>
@@ -213,38 +377,34 @@
       <!-- Latest News -->
       <div class="col-md-6 mb-4">
         <h4 class="fw-bold mb-3">Latest News</h4>
-        <div class="mb-3">
-          <h6 class="fw-semibold">Lorem Ipsum Dolor Sit Amet</h6>
-          <p class="text-muted mb-1">Lorem ipsum dolor sit amet, consectetur...</p>
-          <small class="text-secondary">Mar 3, 2023</small>
+        <div class="card border-start border-primary ps-3 mb-3">
+          <div class="card-body p-2">
+            <h6 class="fw-bold mb-0">Lorem Ipsum Dolor Sit Amet</h6>
+            <small class="text-muted">Mar 3, 2023</small>
+          </div>
         </div>
-        <div class="mb-3">
-          <h6 class="fw-semibold">Lorem Ipsum Dolor Sit Amet</h6>
-          <p class="text-muted mb-1">Lorem ipsum dolor sit amet, consectetur...</p>
-          <small class="text-secondary">Feb 20, 2023</small>
+        <div class="card border-start border-primary ps-3 mb-3">
+          <div class="card-body p-2">
+            <h6 class="fw-bold mb-0">Lorem Ipsum Dolor Sit Amet</h6>
+            <small class="text-muted">Mar 3, 2023</small>
+          </div>
         </div>
-        <a href="#" class="text-primary">View All News</a>
+        <a href="#" class="text-primary small">View All New</a>
       </div>
 
       <!-- Events -->
       <div class="col-md-6 mb-4">
         <h4 class="fw-bold mb-3">Events</h4>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h6 class="fw-bold mb-0">June 20, 2023</h6>
-            <p class="mb-0 text-muted small">Lorem ipsum dorduma:</p>
+        <div class="card border-start border-primary ps-3 mb-3">
+          <div class="card-body p-2">
+            <h6 class="fw-bold mb-0">Lorem Ipsum Dolor Sit Amet</h6>
+            <small class="text-muted">Mar 3, 2023</small>
           </div>
         </div>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h6 class="fw-bold mb-0">June 5, 2023</h6>
-            <p class="mb-0 text-muted small">Lorem ipsum dorduma:</p>
-          </div>
-        </div>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h6 class="fw-bold mb-0">May 22, 2023</h6>
-            <p class="mb-0 text-muted small">Lorem ipsum dorduma:</p>
+        <div class="card border-start border-primary ps-3 mb-3">
+          <div class="card-body p-2">
+            <h6 class="fw-bold mb-0">Lorem Ipsum Dolor Sit Amet</h6>
+            <small class="text-muted">Mar 3, 2023</small>
           </div>
         </div>
         <a href="#" class="text-primary">View All Events</a>
@@ -256,43 +416,58 @@
 <!-- About BSP -->
 <section class="py-5 bg-white">
   <div class="container">
-    <div class="row align-items-center text-center text-md-start">
-      <div class="col-md-3 mb-3">
-        <div class="bg-primary rounded-circle d-flex justify-content-center align-items-center mx-auto" style="width: 100px; height: 100px;">
+    <div class="row align-items-center g-4">
+      <!-- Icon Section -->
+      <div class="col-md-3 text-center">
+        <div class="bsp-blue rounded-circle d-flex justify-content-center align-items-center mx-auto shadow" style="width: 180px; height: 180px;">
           <i class="bi bi-bank text-white fs-1"></i>
         </div>
       </div>
+
+      <!-- Text Content -->
       <div class="col-md-9">
-        <h4 class="fw-bold">About the BSP</h4>
-        <p>The Bangko Sentral ng Pilipinas (BSP) is the central bank of the Republic of the Philippines. It was established on 3 July 1993 pursuant to the provisions of the 1987 Philippine Constitution and the New Central Bank Act of 1993. The BSP took over from Central Bank of Philippines, which was established on 3 January 1949, as the country’s central monetary authority. The BSP enjoys fiscal and administrative autonomy from the National Government in the pursuit of its mandated responsibilities.</p>
-        <a href="#" class="text-primary">Read More</a>
+        <h4 class="fw-bold mb-3">About the BSP</h4>
+        <p class="text-muted mb-3">
+          The <strong>Bangko Sentral ng Pilipinas (BSP)</strong> is the central bank of the Republic of the Philippines. Established on <strong>July 3, 1993</strong>, under the 1987 Philippine Constitution and the New Central Bank Act, the BSP assumed the responsibilities of the former Central Bank of the Philippines (founded in 1949).
+        </p>
+        <p class="text-muted mb-3">
+          As the country’s central monetary authority, the BSP is entrusted with promoting financial stability and price stability. It operates with full fiscal and administrative autonomy in pursuit of its mandate.
+        </p>
+        <a href="#" class="btn btn-outline-primary rounded-pill px-4">Read More</a>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- Footer -->
-<footer class="bg-dark text-white py-4">
+<footer class="bg-dark text-white pt-5 pb-4">
   <div class="container">
-    <div class="row text-center text-md-start">
-      <div class="col-md-4 mb-3">
-        <h5>Contact Us</h5>
-        <p>Email: bspmail@bsp.gov.ph<br>Phone: (+632) 8811-1277 (8811-1BSP)</p>
+    <div class="row text-center text-md-start mb-4">
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold mb-3">Contact Us</h5>
+        <p class="small mb-1"><i class="bi bi-envelope me-2"></i> bspmail@bsp.gov.ph</p>
+        <p class="small"><i class="bi bi-telephone me-2"></i> (+632) 8811-1277 (8811-1BSP)</p>
       </div>
-      <div class="col-md-4 mb-3">
-        <h5>Follow Us</h5>
-        <i class="bi bi-facebook me-2"></i>
-        <i class="bi bi-twitter me-2"></i>
-        <i class="bi bi-youtube"></i>
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold mb-3">Follow Us</h5>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3">
+          <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white fs-5"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-white fs-5"><i class="bi bi-youtube"></i></a>
+        </div>
       </div>
       <div class="col-md-4">
-        <h5>Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-white text-decoration-none">FAQs</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Site Map</a></li>
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="#" class="text-white text-decoration-none">FAQs</a></li>
+          <li class="mb-2"><a href="#" class="text-white text-decoration-none">Site Map</a></li>
           <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
         </ul>
       </div>
+    </div>
+    <div class="text-center small border-top pt-3">
+      &copy; 2025 Bangko Sentral ng Pilipinas. All rights reserved.
     </div>
   </div>
 </footer>
