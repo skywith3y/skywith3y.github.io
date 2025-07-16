@@ -5,32 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About the Bank | BSP</title>
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --bsp-blue: #003366;
-      --bsp-yellow: #fdb913;
-    }
-
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      padding: 0;
+      margin: 0;
     }
 
-    .header {
-      background-color: var(--bsp-blue);
+    .bsp-blue {
+      background-color: #003366;
       color: white;
-      padding: 20px 0;
     }
 
-    .header h5 {
-      margin-left: 10px;
+    .bsp-yellow {
+      color: #FFD700;
     }
 
-    .navbar {
-      background-color: #f8f9fa;
+    h1, h4, .section-title {
+      font-family: 'Merriweather', serif;
+    }
+
+    input.form-control {
+      max-width: 250px;
+      border-radius: 20px;
+      border: none;
+      padding: 8px 15px;
     }
 
     .section-title {
-      color: var(--bsp-blue);
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .navbar {
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid #FFD700;
+    }
+
+    .nav-item {
+      border-bottom: 3px solid transparent;
+    }
+
+    .nav-item:hover {
+      border-bottom: 3px solid #FFD700;
+      transition: border 0.2s ease;
+    }
+
+    @media (max-width: 767.98px) {
+      header .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      header img {
+        width: 70px;
+        height: 70px;
+      }
+
+      header h5 {
+        font-size: 1rem;
+      }
+
+      header input.form-control {
+        width: 100% !important;
+        max-width: none;
+      }
+
+      .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar-nav {
+        width: 100%;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .about-bsp-text {
+        text-align: center;
+      }
+
+      .about-bsp-text .row {
+        flex-direction: column;
+      }
+
+      .about-bsp-text .col-md-3 {
+        margin-bottom: 1rem;
+      }
+
+      .about-bsp-text .col-md-9 {
+        text-align: center;
+      }
+    }
+
+    .section-title {
+      color: #003366;
       font-weight: 700;
       margin-bottom: 20px;
     }
@@ -47,62 +125,65 @@
     }
 
     .btn-custom {
-      border: 1px solid var(--bsp-blue);
-      color: var(--bsp-blue);
+      border: 1px solid #003366;
+      color: #003366;
+      border-radius: 20px;
+      padding: 8px 20px;
+      transition: all 0.3s ease;
     }
 
     .btn-custom:hover {
-      background-color: var(--bsp-blue);
+      background-color: #003366;
       color: white;
     }
 
-    @media (max-width: 768px) {
-      .header .d-flex {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    .text-primary {
+      color: #003366 !important;
+    }
 
-      .header form {
-        margin-top: 10px;
-        width: 100%;
+    .text-primary:hover {
+      color: #002b55 !important;
+    }
+
+    @media (max-width: 767.98px) {
+      footer .row {
+        flex-direction: column;
+        text-align: center;
       }
     }
+
   </style>
 </head>
 <body>
 
-<!-- Header -->
-<div class="container-fluid header">
-  <div class="container d-flex align-items-center justify-content-between">
+<header class="bsp-blue py-4">
+  <div class="container d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center">
-      <img src="./img/bsp_logo.png" alt="BSP Logo" style="height: 50px;">
-      <h5 class="mb-0 ms-3">BANGKO SENTRAL NG PILIPINAS</h5>
+      <img src="./img/bsp_logo.png" alt="BSP Logo" width="100" height="100" class="me-2">
+      <h5 class="mb-0 text-white">BANGKO SENTRAL NG PILIPINAS</h5>
     </div>
-    <form class="d-flex" role="search">
-      <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
-    </form>
+    <input type="text" class="form-control w-25" placeholder="Search">
   </div>
-</div>
+</header>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg border-bottom">
-  <div class="container">
-    <ul class="navbar-nav d-flex flex-row flex-wrap justify-content-center w-100">
-      <li class="nav-item px-2"><a class="nav-link" href="#">About the Bank</a></li>
-      <li class="nav-item px-2"><a class="nav-link" href="#">Price Stability</a></li>
-      <li class="nav-item px-2"><a class="nav-link" href="#">Financial Stability</a></li>
-      <li class="nav-item px-2"><a class="nav-link" href="#">Payments and Settlements</a></li>
-      <li class="nav-item px-2"><a class="nav-link" href="#">Monetary Policy</a></li>
-      <li class="nav-item px-2"><a class="nav-link" href="#">News</a></li>
-      <li class="nav-item px-2"><a class="nav-link" href="#">Consumer Corner</a></li>
-    </ul>
-  </div>
-</nav>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm" style="background-color: rgba(0, 51, 102, 0.85);">
+    <div class="container px-0">
+      <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#bspNavbar" aria-controls="bspNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<!-- Main Content -->
+      <div class="collapse navbar-collapse justify-content-center" id="bspNavbar">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="./index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about.html">ABOUT THE BANK</a></li>
+          <li class="nav-item"><a class="nav-link" href="./price_stability.html">PRICE STABILITY</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
 <div class="container my-5">
   <div class="row">
-    <!-- Text content -->
     <div class="col-md-6">
       <h3 class="section-title">ABOUT THE BANK</h3>
 
@@ -126,40 +207,61 @@
         <p class="section-text">
           A group of Filipinos had conceptualized a central bank for the Philippines as early as 1933. It came up with the rudiments of a bill for the establishment of a central bank for the country after a careful study of the economic provisions of the Hare-Hawes Cutting bill, the Philippine independence bill approved by the US Congress.
         </p>
-        <!-- Read More Button -->
         <a class="text-primary" data-bs-toggle="collapse" href="#readMoreHistory" role="button" aria-expanded="false" aria-controls="readMoreHistory">
           Read More
         </a>
-      
-        <!-- Collapsible Content -->
+
         <div class="collapse section-text mt-2" id="readMoreHistory">
           During the Commonwealth period (1935-1941), the discussion about a Philippine central bank that would promote price stability and economic growth continued. The country’s monetary system then was administered by the Department of Finance and the National Treasury. The Philippines was on the exchange standard using the US dollar—which was backed by 100 percent gold reserve—as the standard currency.
-      
+
           <br><br>In 1939, as required by the Tydings-McDuffie Act, the Philippine legislature passed a law establishing a central bank. As it was a monetary law, it required the approval of the United States president. However, President Franklin D. Roosevelt disapproved it due to strong opposition from vested interests. A second law was passed in 1944 during the Japanese occupation, but the arrival of the American liberalization forces aborted its implementation.
-      
+
           <br><br>Shortly after President Manuel Roxas assumed office in 1946, he instructed then Finance Secretary Miguel Cuaderno, Sr. to draw up a charter for a central bank. The establishment of a monetary authority became imperative a year later as a result of the findings of the Joint Philippine-American Finance Commission chaired by Mr. Cuaderno. The Commission, which studied Philippine financial, monetary and fiscal problems in 1947, recommended a shift from the dollar exchange standard to a managed currency system. A central bank was necessary to implement the proposed shift to the new system.
-      
+
           <br><br>Immediately, the Central Bank Council, which was created by President Manuel Roxas to prepare the charter of a proposed monetary authority, produced a draft. It was submitted to Congress in February 1948. By June of the same year, the newly-proclaimed President Elpidio Quirino, who succeeded President Roxas, affixed his signature on Republic Act No. 265, the Central Bank Act of 1948. The establishment of the Central Bank of the Philippines was a definite step toward national sovereignty...
-      
+
           <br><br>...On 3 July 1993, the New Central Bank Act took effect.
         </div>
       </div>
     </div>
 
-    <!-- Image -->
     <div class="col-md-6 text-center">
       <img src="./img/philippine_map.png" alt="Map of the Philippines" class="img-fluid" style="max-height: 400px;">
     </div>
   </div>
-
-  <!-- Button group -->
-  <div class="text-center mt-5">
-    <button class="btn btn-custom mx-1">Contact Us</button>
-    <button class="btn btn-custom mx-1">Learn More</button>
-    <button class="btn btn-custom mx-1">Careers</button>
-    <button class="btn btn-custom mx-1">FAQs</button>
-  </div>
 </div>
+
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container">
+    <div class="row text-center text-md-start mb-4">
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold mb-3">Contact Us</h5>
+        <p class="small mb-1"><i class="bi bi-envelope me-2"></i> bspmail@bsp.gov.ph</p>
+        <p class="small"><i class="bi bi-telephone me-2"></i> (+632) 8811-1277 (8811-1BSP)</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold mb-3">Follow Us</h5>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3">
+          <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white fs-5"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-white fs-5"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="#" class="text-white text-decoration-none">FAQs</a></li>
+          <li class="mb-2"><a href="#" class="text-white text-decoration-none">Site Map</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center small border-top pt-3">
+      &copy; 2025 Bangko Sentral ng Pilipinas. All rights reserved. For educational purposes only. This is not an official website of the BSP.
+    </div>
+  </div>
+</footer>
+
 <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -15,73 +15,72 @@
       padding: 0;
       margin: 0;
     }
-  
+
     .bsp-blue {
       background-color: #003366;
       color: white;
     }
-  
+
     .bsp-yellow {
       color: #FFD700;
     }
-  
+
     h1, h4, .section-title {
       font-family: 'Merriweather', serif;
     }
-  
+
     input.form-control {
       max-width: 250px;
       border-radius: 20px;
       border: none;
       padding: 8px 15px;
     }
-  
+
     .section-title {
       font-weight: bold;
       font-size: 1.5rem;
     }
-  
+
     .circle-nav {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
       text-decoration: none;
     }
-  
+
     .circle-nav:hover .bg-primary {
       background-color: #002b55 !important;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
       transform: scale(1.1);
     }
-  
+
     .circle-nav p {
       color: #003366;
       transition: color 0.3s ease;
     }
-  
+
     .circle-nav:hover p {
       color: #00509e;
       font-weight: bold;
     }
-  
+
     .circle-nav .bg-primary {
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     }
-  
+
     .navbar {
       backdrop-filter: blur(8px);
       border-bottom: 2px solid #FFD700;
     }
 
     .nav-item {
-      border-bottom: 3px solid transparent; /* Yellow */
+      border-bottom: 3px solid transparent;
     }
-  
+
     .nav-item:hover {
-      border-bottom: 3px solid #FFD700; /* Yellow */
+      border-bottom: 3px solid #FFD700;
       transition: border 0.2s ease;
     }
-  
-    /* RESPONSIVE FIXES */
+
     @media (max-width: 767.98px) {
       header .container {
         flex-direction: column;
@@ -89,69 +88,68 @@
         gap: 1rem;
         text-align: center;
       }
-  
+
       header img {
         width: 70px;
         height: 70px;
       }
-  
+
       header h5 {
         font-size: 1rem;
       }
-  
+
       header input.form-control {
         width: 100% !important;
         max-width: none;
       }
-  
+
       .navbar .container {
         flex-direction: column;
         align-items: flex-start;
       }
-  
+
       .navbar-nav {
         width: 100%;
       }
-  
+
       .circle-nav .bg-primary {
         width: 80px !important;
         height: 80px !important;
       }
-  
+
       .circle-nav i {
         font-size: 1.5rem !important;
       }
-  
+
       .circle-nav p {
         font-size: 0.8rem;
       }
-  
+
       .section-title {
         font-size: 1.2rem;
       }
-  
+
       .card {
         font-size: 0.9rem;
       }
-  
+
       .about-bsp-text {
         text-align: center;
       }
-  
+
       .about-bsp-text .row {
         flex-direction: column;
       }
-  
+
       .about-bsp-text .col-md-3 {
         margin-bottom: 1rem;
       }
-  
+
       .about-bsp-text .col-md-9 {
         text-align: center;
       }
     }
-  
-    /* Footer responsiveness */
+
     @media (max-width: 767.98px) {
       footer .row {
         flex-direction: column;
@@ -160,57 +158,56 @@
     }
 
     .hero-section {
-  background: linear-gradient(180deg, #003366 0%, #004080 100%);
-}
+      background: linear-gradient(180deg, #003366 0%, #004080 100%);
+    }
 
-.hero-section h1 {
-  line-height: 1.3;
-}
+    .hero-section h1 {
+      line-height: 1.3;
+    }
 
-.hero-section .btn-warning {
-  border-radius: 30px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
+    .hero-section .btn-warning {
+      border-radius: 30px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
 
-.hero-section .btn-warning:hover {
-  background-color: #e0b200;
-  transform: translateY(-2px);
-}
+    .hero-section .btn-warning:hover {
+      background-color: #e0b200;
+      transform: translateY(-2px);
+    }
 
-.section-title {
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
+    .section-title {
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-.card h2 {
-  font-weight: 700;
-  font-size: 2rem;
-}
+    .card h2 {
+      font-weight: 700;
+      font-size: 2rem;
+    }
 
-.card p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
 
-.circle-nav .rounded-circle {
-  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.05);
-  transition: transform 0.2s;
-}
-.circle-nav:hover .rounded-circle {
-  transform: scale(1.05);
-}
+    .circle-nav .rounded-circle {
+      box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .circle-nav:hover .rounded-circle {
+      transform: scale(1.05);
+    }
 
   </style>
 </head>
 <body>
 
-<!-- Header -->
 <header class="bsp-blue py-4">
   <div class="container d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center">
@@ -226,27 +223,21 @@
       <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#bspNavbar" aria-controls="bspNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-  
-      <div class="collapse navbar-collapse" id="bspNavbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#">ABOUT THE BANK</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">PRICE STABILITY</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">FINANCIAL STABILITY</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">PAYMENTS AND SETTLEMENTS</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">FINANCIAL INCLUSION</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">MEDIA</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">CONSUMER CORNER</a></li>
+
+      <div class="collapse navbar-collapse justify-content-center" id="bspNavbar">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="./index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about.html">ABOUT THE BANK</a></li>
+          <li class="nav-item"><a class="nav-link" href="./price_stability.html">PRICE STABILITY</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  
 
-<!-- Hero Section -->
+
 <section class="hero-section text-white py-5" style="background-color: #003366;">
   <div class="container">
     <div class="row align-items-center">
-      <!-- Text Content -->
       <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
         <h1 class="fw-bold display-5">
           COUNTRY’S <span class="text-warning">CENTRAL</span><br>
@@ -255,8 +246,7 @@
         <p class="lead mt-3">The central bank of the Republic of the Philippines.</p>
         <a href="#" class="btn btn-warning px-4 py-2 mt-3 fw-bold shadow-sm">Learn More</a>
       </div>
-      
-      <!-- Image -->
+
       <div class="col-md-6 text-center">
         <img src="./img/ph_map.png" alt="Philippines Map" class="img-fluid" style="max-height: 350px;">
       </div>
@@ -265,7 +255,6 @@
 </section>
 
 
-<!-- BSP at a Glance -->
 <section class="py-5 bg-light">
   <div class="container text-center">
     <div class="text-center mb-4">
@@ -275,7 +264,6 @@
       <p class="text-muted small mb-0">Key economic indicators as of the latest data</p>
     </div>
     <div class="row g-4">
-      <!-- Card 1 -->
       <div class="col-md-3">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-body">
@@ -285,7 +273,6 @@
           </div>
         </div>
       </div>
-      <!-- Card 2 -->
       <div class="col-md-3">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-body">
@@ -295,7 +282,6 @@
           </div>
         </div>
       </div>
-      <!-- Card 3 -->
       <div class="col-md-3">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-body">
@@ -305,7 +291,6 @@
           </div>
         </div>
       </div>
-      <!-- Card 4 -->
       <div class="col-md-3">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-body">
@@ -324,7 +309,6 @@
   </div>
 </section>
 
-<!-- Icon Quick Links -->
 <section class="py-4 bg-white">
   <div class="container">
     <div class="text-center mb-4">
@@ -370,11 +354,9 @@
   </div>
 </section>
 
-<!-- News and Events -->
 <section class="py-5 bg-light">
   <div class="container">
     <div class="row">
-      <!-- Latest News -->
       <div class="col-md-6 mb-4">
         <h4 class="fw-bold mb-3">Latest News</h4>
         <div class="card border-start border-primary ps-3 mb-3">
@@ -392,7 +374,6 @@
         <a href="#" class="text-primary small">View All New</a>
       </div>
 
-      <!-- Events -->
       <div class="col-md-6 mb-4">
         <h4 class="fw-bold mb-3">Events</h4>
         <div class="card border-start border-primary ps-3 mb-3">
@@ -413,18 +394,15 @@
   </div>
 </section>
 
-<!-- About BSP -->
 <section class="py-5 bg-white">
   <div class="container">
     <div class="row align-items-center g-4">
-      <!-- Icon Section -->
       <div class="col-md-3 text-center">
         <div class="bsp-blue rounded-circle d-flex justify-content-center align-items-center mx-auto shadow" style="width: 180px; height: 180px;">
           <i class="bi bi-bank text-white fs-1"></i>
         </div>
       </div>
 
-      <!-- Text Content -->
       <div class="col-md-9">
         <h4 class="fw-bold mb-3">About the BSP</h4>
         <p class="text-muted mb-3">
@@ -433,14 +411,13 @@
         <p class="text-muted mb-3">
           As the country’s central monetary authority, the BSP is entrusted with promoting financial stability and price stability. It operates with full fiscal and administrative autonomy in pursuit of its mandate.
         </p>
-        <a href="#" class="btn btn-outline-primary rounded-pill px-4">Read More</a>
+        <a href="./about.html" class="btn btn-outline-primary rounded-pill px-4">Read More</a>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- Footer -->
 <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container">
     <div class="row text-center text-md-start mb-4">
@@ -467,7 +444,7 @@
       </div>
     </div>
     <div class="text-center small border-top pt-3">
-      &copy; 2025 Bangko Sentral ng Pilipinas. All rights reserved.
+      &copy; 2025 Bangko Sentral ng Pilipinas. All rights reserved. For educational purposes only. This is not an official website of the BSP.
     </div>
   </div>
 </footer>
